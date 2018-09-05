@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SampleTestingRobot</string>
+    <string name="enter_name">Enter name</string>
+    <string name="process">Process</string>
 </resources>
