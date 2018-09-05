@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Our business logic is as simple as that:
+        // just display a TextView with a greeting for the entered name.
         processButton.setOnClickListener {
             resultText.text = String.format("Hello, %s!", nameInput.text)
             resultText.visibility = View.VISIBLE

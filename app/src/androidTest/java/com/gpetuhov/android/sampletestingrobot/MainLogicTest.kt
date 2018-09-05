@@ -17,7 +17,15 @@ class MainLogicTest {
 
     @Test
     fun enterNameSuccess() {
-        // The test must know nothing of the UI views, only business logic
+        // The test knows nothing of the UI views, only business logic.
+        // All implementation details are contained inside the robots.
+        // We have 3 actions here:
+        // 1. Enter user name
+        // 2. Press Process button
+        // 3. Check result
+        // Because all details are implemented inside the robots,
+        // and thanks to the convenience functions we have for each robot,
+        // the tests remain clean and independent of the UI views.
 
         val user = "Bob"
 
