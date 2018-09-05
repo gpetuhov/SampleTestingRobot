@@ -1,5 +1,6 @@
 package com.gpetuhov.android.sampletestingrobot.robots
 
+import android.support.test.espresso.Espresso.closeSoftKeyboard
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
@@ -12,6 +13,7 @@ fun greeting(func: NameRobot.() -> Unit) = NameRobot().apply { func() }
 class NameRobot {
     fun name(name: String) {
         onView(withHint(R.string.enter_name)).perform(typeText(name))
+        closeSoftKeyboard()
     }
 
     fun process() {

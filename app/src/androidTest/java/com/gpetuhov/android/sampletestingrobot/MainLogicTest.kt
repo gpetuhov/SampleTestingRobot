@@ -1,11 +1,9 @@
 package com.gpetuhov.android.sampletestingrobot
 
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.gpetuhov.android.sampletestingrobot.robots.greeting
+import com.gpetuhov.android.sampletestingrobot.robots.result
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +17,17 @@ class MainLogicTest {
 
     @Test
     fun enterNameSuccess() {
-        Espresso.onView(ViewMatchers.withText(R.string.process)).check(matches(isDisplayed()))
+        // The test must know nothing of the UI views, only business logic
+
+        val user = "Bob"
+
+        greeting {
+            name(user)
+            process()
+        }
+
+        result {
+            isSuccess(user)
+        }
     }
 }
